@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AblePlayer Example - Video with Audio Description and Captions</title>
+
+  <!-- AblePlayer CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ableplayer@5.0.8/build/ableplayer.min.css" />
+
+  <!-- jQuery (required by AblePlayer) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- AblePlayer JS -->
+  <script src="https://cdn.jsdelivr.net/npm/ableplayer@5.0.8/build/ableplayer.min.js"></script>
+
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+    }
+    .player-container {
+      max-width: 720px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>AblePlayer Demo — Video with Captions and Audio Description</h1>
+
+  <div class="player-container">
+    <video id="demoVideo"
+           width="720"
+           height="405"
+           preload="auto"
+           data-able-player
+           data-desc-src="desc5/video-descriptions.mp3"
+           data-use-audio-description="true"
+           data-caption-src="media/captions.vtt"
+           data-transcript-div="transcript"
+           poster="desc5/poster.jpg"
+           playsinline>
+      <source src="desc5/video.mp4" type="video/mp4" />
+      <track kind="captions" src="desc5/captions.vtt" srclang="en" label="English" default />
+    </video>
+
+    <div id="transcript" class="able-transcript-container"></div>
+  </div>
+
+</body>
+</html>
